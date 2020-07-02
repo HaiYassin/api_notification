@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NotificationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=NotificationRepository::class)
@@ -19,26 +20,29 @@ class Notification
     private $id;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=255)
      */
     private $type;
 
     /**
+     * @var DateTime
+     *
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $createdAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $author;
-
-    /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
+     * @var bool
+     *
      * @ORM\Column(type="boolean")
      */
     private $view = false;
@@ -49,16 +53,27 @@ class Notification
      */
     private $user;
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getType(): ?string
+    /**
+     * @return string
+     */
+    public function getType(): string
     {
         return $this->type;
     }
 
+    /**
+     * @param string $type
+     *
+     * @return Notification
+     */
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -66,35 +81,39 @@ class Notification
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getCreatedAt(): \DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(?\DateTimeInterface $createdAt): self
+    /**
+     * @param \DateTimeInterface $createdAt
+     *
+     * @return Notification
+     */
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(string $author): self
-    {
-        $this->author = $author;
-
-        return $this;
-    }
-
+    /**
+     * @return string|null
+     */
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
+    /**
+     * @param string|null $description
+     *
+     * @return Notification
+     */
     public function setDescription(?string $description): self
     {
         $this->description = $description;
@@ -102,26 +121,42 @@ class Notification
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    public function getView(): ?bool
+    /**
+     * @return bool
+     */
+    public function isView(): bool
     {
         return $this->view;
     }
 
+    /**
+     * @param bool $view
+     *
+     * @return Notification
+     */
     public function setView(bool $view): self
     {
         $this->view = $view;
+
+        return $this;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     *
+     * @return Notification
+     */
+    public function setUser(User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
