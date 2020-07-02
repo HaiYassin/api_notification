@@ -31,7 +31,7 @@ class Content implements \JsonSerializable
     private $elapsedTime;
 
     /** @var bool */
-    private $read = false;
+    private $view = false;
 
     /**
      * Content constructor.
@@ -51,10 +51,14 @@ class Content implements \JsonSerializable
 
     /**
      * @param string $description
+     *
+     * @return Content
      */
-    public function setDescription(string $description): void
+    public function setDescription(string $description): Content
     {
         $this->description = $description;
+
+        return $this;
     }
 
     /**
@@ -68,13 +72,15 @@ class Content implements \JsonSerializable
     /**
      * @param array $attributes
      *
-     * @return array
+     * @return Content
      */
-    public function addContentBound(array $attributes): array
+    public function addContentBound(array $attributes): Content
     {
         foreach ($attributes as $ind => $value) {
             $this->contentBound[$ind] = $value;
         }
+
+        return $this;
     }
 
     /**
@@ -87,10 +93,14 @@ class Content implements \JsonSerializable
 
     /**
      * @param string $contentType
+     *
+     * @return Content
      */
-    public function setContentType(string $contentType): void
+    public function setContentType(string $contentType): Content
     {
         $this->contentType = $contentType;
+
+        return $this;
     }
 
     /**
@@ -103,10 +113,14 @@ class Content implements \JsonSerializable
 
     /**
      * @param string $authorName
+     *
+     * @return Content
      */
-    public function setAuthorName(string $authorName): void
+    public function setAuthorName(string $authorName): Content
     {
         $this->authorName = $authorName;
+
+        return $this;
     }
 
     /**
@@ -119,10 +133,14 @@ class Content implements \JsonSerializable
 
     /**
      * @param string $authorAvatar
+     *
+     * @return Content
      */
-    public function setAuthorAvatar(string $authorAvatar): void
+    public function setAuthorAvatar(string $authorAvatar): Content
     {
         $this->authorAvatar = $authorAvatar;
+
+        return $this;
     }
 
     /**
@@ -136,27 +154,33 @@ class Content implements \JsonSerializable
     /**
      * @param DateTime $elapsedTime
      *
-     * @return DateTime
+     * @return Content
      */
-    public function setElapsedTime(DateTime $elapsedTime): DateTime
+    public function setElapsedTime(DateTime $elapsedTime): Content
     {
         $this->elapsedTime = $elapsedTime;
+
+        return $this;
     }
 
     /**
      * @return bool
      */
-    public function isRead(): bool
+    public function isView(): bool
     {
-        return $this->read;
+        return $this->view;
     }
 
     /**
-     * @param bool $read
+     * @param bool $view
+     *
+     * @return Content
      */
-    public function setRead(bool $read): void
+    public function setView(bool $view): Content
     {
-        $this->read = $read;
+        $this->view = $view;
+
+        return $this;
     }
 
     /**
