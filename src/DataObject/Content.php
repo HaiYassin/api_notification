@@ -3,6 +3,8 @@
 
 namespace App\DataObject;
 
+use Symfony\Component\Validator\Constraints\DateTime;
+
 /**
  * Class Content
  *
@@ -21,6 +23,12 @@ class Content implements \JsonSerializable
 
     /** @var string */
     private $authorName;
+
+    /** @var string */
+    private $authorAvatar;
+
+    /** @var DateTime */
+    private $elapsedTime;
 
     /** @var bool */
     private $read = false;
@@ -99,6 +107,40 @@ class Content implements \JsonSerializable
     public function setAuthorName(string $authorName): void
     {
         $this->authorName = $authorName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthorAvatar(): string
+    {
+        return $this->authorAvatar;
+    }
+
+    /**
+     * @param string $authorAvatar
+     */
+    public function setAuthorAvatar(string $authorAvatar): void
+    {
+        $this->authorAvatar = $authorAvatar;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getElapsedTime(): DateTime
+    {
+        return $this->elapsedTime;
+    }
+
+    /**
+     * @param DateTime $elapsedTime
+     *
+     * @return DateTime
+     */
+    public function setElapsedTime(DateTime $elapsedTime): DateTime
+    {
+        $this->elapsedTime = $elapsedTime;
     }
 
     /**
