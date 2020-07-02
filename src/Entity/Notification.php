@@ -39,11 +39,6 @@ class Notification
     private $description;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $view = false;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="notifications")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -110,18 +105,6 @@ class Notification
     public function setUser(?User $user): self
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    public function getView(): ?bool
-    {
-        return $this->view;
-    }
-
-    public function setView(bool $view): self
-    {
-        $this->view = $view;
 
         return $this;
     }
