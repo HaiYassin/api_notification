@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
  * Class Content
  *
  * Class model to our API Format
+ * https://symfony.com/doc/current/components/serializer.html#serializing-an-object
  */
 class Content implements \JsonSerializable
 {
