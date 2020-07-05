@@ -70,7 +70,6 @@ class NotificationController extends AbstractController
         return new JsonResponse(
             $dataSerialized,
             Response::HTTP_OK,
-            ['Content-type' => 'application/json'],
             true
         );
     }
