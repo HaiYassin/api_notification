@@ -26,6 +26,7 @@ class ContentFactory
             ->setView(true)
             ->setValidityTime($notification->getValidityTime())
             ->addContentRelated($notification->getContentRelated())
+            ->setContentType($notification->getContentType())
         ;
 
         return $content;
