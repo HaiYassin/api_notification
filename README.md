@@ -1,21 +1,27 @@
 # api_notification
 
 ```
+Config your .env file :
 ### config .env file
 
+Launch updates :
 ### composer update
 >Install composer : [ https://getcomposer.org/ ]
 
+Make a migration :
 ### php bin/console make:migration
 
+Load the fixtures :
 ### php bin/console doctrine:fixtures:load
 
+Launch the phpunit test :
+### php bin/phpunit 
 ```
 
 ```
 When your server is launch and your db is created. Please to try to get this url and select a valid userId existing in your DB :
 
-**..//api/users/userId/notifications**
+**../api/users/userId/notifications**
 
 ```
 
@@ -88,4 +94,13 @@ When your server is launch and your db is created. Please to try to get this url
         "view": true
     }
 ]
+```
+
+```
+    ### Design Pattern : 
+    
+    - Strategy :
+    
+    - Factory : 
+    
 ```
