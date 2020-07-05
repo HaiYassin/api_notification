@@ -4,13 +4,13 @@
 namespace App\Interfaces;
 
 
-use App\DataObject\Content;
+use App\Model\Content;
 use App\Entity\Notification;
 
 /**
- * Interface NotificationContentFormat
+ * Interface NotificationContentFormatStrategyInterface
  */
-interface NotificationContentFormat
+interface NotificationContentFormatStrategyInterface
 {
     /**
      * @param Notification $notification

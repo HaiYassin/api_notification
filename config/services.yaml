@@ -25,3 +25,23 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Interfaces\NotificationContentFormatStrategyInterface:
+        public: true
+        alias: App\Strategy\NotificationContentTypeStrategy
+
+    App\Strategy\InformationNotificationFormatting:
+        tags:
+            - { name: "app_notification_formatting", type: "information"}
+
+    App\Strategy\NewnessNotificationFormatting:
+        tags:
+            - { name: "app_notification_formatting", type: "newness"}
+
+    App\Strategy\RecommendationNotificationFormatting:
+        tags:
+            - { name: "app_notification_formatting", type: "recommendation"}
+
+    App\Strategy\SharedNotificationFormatting:
+        tags:
+            - { name: "app_notification_formatting", type: "shared"}

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\DataObject;
+namespace App\Model;
 
 use Symfony\Component\Validator\Constraints\DateTime;
 
@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
  * Class Content
  *
  * Class model to our API Format
+ * https://symfony.com/doc/current/components/serializer.html#serializing-an-object
  */
 class Content implements \JsonSerializable
 {
@@ -16,7 +17,7 @@ class Content implements \JsonSerializable
     private $description;
 
     /** @var array */
-    private $contentBound;
+    private $contentRelated;
 
     /** @var string */
     private $contentType;
@@ -30,6 +31,9 @@ class Content implements \JsonSerializable
     /** @var DateTime */
     private $elapsedTime;
 
+    /** @var int */
+    private $validityTime;
+
     /** @var bool */
     private $view = false;
 
@@ -38,7 +42,7 @@ class Content implements \JsonSerializable
      */
     public function __construct()
     {
-        $this->contentBound = [];
+        $this->contentRelated = [];
     }
 
     /**
@@ -64,9 +68,9 @@ class Content implements \JsonSerializable
     /**
      * @return array
      */
-    public function getContentBound(): array
+    public function getContentRelated(): array
     {
-        return $this->contentBound;
+        return $this->contentRelated;
     }
 
     /**
@@ -74,10 +78,10 @@ class Content implements \JsonSerializable
      *
      * @return Content
      */
-    public function addContentBound(array $attributes): Content
+    public function addContentRelated(array $attributes): Content
     {
         foreach ($attributes as $ind => $value) {
-            $this->contentBound[$ind] = $value;
+            $this->contentRelated[$ind] = $value;
         }
 
         return $this;
@@ -152,16 +156,37 @@ class Content implements \JsonSerializable
     }
 
     /**
-     * @param DateTime $elapsedTime
+     * @param \DateTime $elapsedTime
      *
      * @return Content
      */
-    public function setElapsedTime(DateTime $elapsedTime): Content
+    public function setElapsedTime(\DateTime $elapsedTime): Content
     {
         $this->elapsedTime = $elapsedTime;
 
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getValidityTime(): int
+    {
+        return $this->validityTime;
+    }
+
+    /**
+     * @param int $validityTime
+     *
+     * @return Content
+     */
+    public function setValidityTime(int $validityTime): self
+    {
+        $this->validityTime = $validityTime;
+
+        return $this;
+    }
+
 
     /**
      * @return bool
