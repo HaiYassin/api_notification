@@ -33,7 +33,7 @@ When your server is launch and your db is created. Please to try to get this url
                 "author": "Mo Horizons"
             }
         },
-        "contentType": null,
+        "contentType": "information",
         "authorName": "USER_1",
         "authorAvatar": "https://i.skyrock.net/8992/90898992/pics/3216399797_1_2_AbWeQIrc.jpg",
         "elapsedTime": "2020-07-05T01:58:29+00:00",
@@ -49,7 +49,7 @@ When your server is launch and your db is created. Please to try to get this url
                 "author": "Mo Horizons"
             }
         },
-        "contentType": null,
+        "contentType": "newness",
         "authorName": "USER_1",
         "authorAvatar": "https://i.skyrock.net/8992/90898992/pics/3216399797_1_2_AbWeQIrc.jpg",
         "elapsedTime": "2020-07-05T01:58:29+00:00",
@@ -65,7 +65,7 @@ When your server is launch and your db is created. Please to try to get this url
                 "author": "Digster France"
             }
         },
-        "contentType": null,
+        "contentType": "recommendation",
         "authorName": "USER_1",
         "authorAvatar": "https://i.skyrock.net/8992/90898992/pics/3216399797_1_2_AbWeQIrc.jpg",
         "elapsedTime": "2020-07-05T01:58:29+00:00",
@@ -80,7 +80,7 @@ When your server is launch and your db is created. Please to try to get this url
                 "img": "https://vignette.wikia.nocookie.net/onepiece/images/1/1c/Usopp_Drum.png/revision/latest/scale-to-width-down/340?cb=20160424133817&path-prefix=fr"
             }
         },
-        "contentType": null,
+        "contentType": "shared",
         "authorName": "USER_1",
         "authorAvatar": "https://i.skyrock.net/8992/90898992/pics/3216399797_1_2_AbWeQIrc.jpg",
         "elapsedTime": "2020-07-05T01:58:29+00:00",
