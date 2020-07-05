@@ -26,7 +26,7 @@ When your server is launch and your db is created. Please to try to get this url
 ```
 
 
-### example of json response :
+### Example of json response :
 
 ```json
 [
