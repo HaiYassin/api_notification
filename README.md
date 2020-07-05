@@ -100,7 +100,22 @@ When your server is launch and your db is created. Please to try to get this url
     ### Design Pattern : 
     
     - Strategy :
-    
+        I choose this pattern for his flexibility, to change the notification format depending of his type.
+        We could have a recommandation, a shared or other thing notification with an independant logic.
+        Moreover, this pattern respect the "S" of Solid principle (Single responsability principle).
+                
+        set up :
+            An interfance where we implement a method called 'format()' with our notification type in argument.
+            This interface is implemented in our central strategy and our different child strategy type (shared, recommandation, newess, information).
+        
     - Factory : 
+        I choose to use this pattern for to create my Content Model.
     
 ```
+
+```
+    ### Compiler pass : 
+    
+```
+
+
