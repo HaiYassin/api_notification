@@ -1,12 +1,14 @@
 # api_notification
 
+Stack : PHP - Symfony 4.4 / Doctrine / Phpunit
+
 ```
 Config your .env file :
 ### config .env file
 
 Launch updates :
 ### composer update
->Install composer : [ https://getcomposer.org/ ]
+>Install composer : [https://getcomposer.org/]
 
 Make a migration :
 ### php bin/console make:migration
@@ -101,6 +103,7 @@ When your server is launch and your db is created. Please to try to get this url
     
     - Strategy :
         I choose this pattern for his flexibility, to change the notification format depending of his type.
+        We have one service for one notification type.
         We could have a recommandation, a shared or other thing notification with an independant logic.
         Moreover, this pattern respect the "S" of Solid principle (Single responsability principle).
                 
@@ -114,8 +117,12 @@ When your server is launch and your db is created. Please to try to get this url
 ```
 
 ```
+
     ### Compiler pass : 
-    
+        It's a tool to manipulate our services definitions by special tag in 'services.yml'. Here for our use case, our services definitions are our different strategies.
+        [https://symfony.com/doc/4.4/service_container/compiler_passes.html]
+        [https://symfony.com/doc/current/components/dependency_injection/compilation.html]
+        
 ```
 
 
