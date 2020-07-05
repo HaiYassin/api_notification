@@ -8,6 +8,10 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+### The change made to a file
+### Example the .env environment file
+.env
+
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache
